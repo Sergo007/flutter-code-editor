@@ -452,7 +452,9 @@ class _CodeFieldState extends State<CodeField> {
   }
 
   Widget _buildGutter() {
-    final lineNumberSize = textStyle.fontSize;
+    final lineNumberSize = widget.gutterStyle.textStyle?.fontSize != null
+        ? widget.gutterStyle.textStyle?.fontSize
+        : textStyle.fontSize;
     final lineNumberColor =
         widget.gutterStyle.textStyle?.color ?? textStyle.color?.withOpacity(.5);
 
